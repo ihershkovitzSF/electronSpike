@@ -1,6 +1,6 @@
 const electron = require('electron');
 const path = require('path');
-const { setup: setupPushReceiver } = require('electron-push-receiver');
+//const { setup: setupPushReceiver } = require('electron-push-receiver');
 
 const {app, BrowserWindow, Menu, Tray, clipboard, globalShortcut} = electron;
 const STACK_SIZE = 5; //Max items that will be saved on the stack
@@ -22,7 +22,7 @@ function createWindow () {
     mainWindow.loadURL(`file://${__dirname}/index.html`); 
 
     // Call it before 'did-finish-load' with mainWindow a reference to your window
-    setupPushReceiver(mainWindow.webContents);
+    //setupPushReceiver(mainWindow.webContents);
 
     mainWindow.openDevTools();
 
@@ -74,8 +74,6 @@ app.on('ready', _ => {
         }]
         }
     ];
-
-   
     
     const contextMenu = Menu.buildFromTemplate(template);
     let stack = [];
